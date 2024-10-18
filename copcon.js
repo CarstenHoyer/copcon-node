@@ -125,7 +125,25 @@ function generateTree(
 function getFileContent(filePath) {
   try {
     const mimeType = mime.lookup(filePath);
-    if (mimeType && mimeType.startsWith("text")) {
+    const ext = path.extname(filePath).toLowerCase();
+
+    // List of known text file extensions
+    const textFileExtensions = [
+      ".js",
+      ".json",
+      ".txt",
+      ".md",
+      ".html",
+      ".css",
+      ".xml",
+      ".yml",
+      ".yaml",
+    ];
+
+    if (
+      (mimeType && mimeType.startsWith("text")) || // Check if it's a known text MIME type
+      textFileExtensions.includes(ext) // Check if the extension is known to be text
+    ) {
       return fs.readFileSync(filePath, "utf8");
     } else {
       const fileSize = fs.statSync(filePath).size;
