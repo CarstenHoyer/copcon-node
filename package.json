@@ -1,0 +1,22 @@
+{
+  "name": "copcon-node",
+  "version": "1.0.0",
+  "main": "copcon.js",
+  "type": "module",
+  "bin": {
+    "cpcon": "./copcon.js"
+  },
+  "scripts": {
+    "start": "node copcon.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "clipboardy": "^4.0.0",
+    "ignore": "^6.0.2",
+    "mime-types": "^2.1.35",
+    "yargs": "^17.7.2"
+  }
+}
